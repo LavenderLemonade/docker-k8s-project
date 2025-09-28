@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fetch-pokemon-job
+spec:
+  template:
+    metadata:
+      name: fetch-pokemon
+    spec:
+      containers:
+        - name: fetch-pokemon
+          image: py-container
+          imagePullPolicy: Never
+      restartPolicy: Never
